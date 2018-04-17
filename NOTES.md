@@ -5,7 +5,7 @@ After airport selection, user is presented with QuickFly statistics concerning s
 
 Goals
 <!-- 1. Design Folder Structure for project - used bundler to generate. -->
-2. Connect to GitHub -
+<!-- 2. Connect to GitHub - -->
 <!-- 3. File runs program -->
 4. Stub design of functionality
 5. Code, update, review
@@ -14,5 +14,5 @@ Goals
 Notes concerning development
 
 ##how to get the cmd for atom?
-#also, more importantly, need github setup
+<!-- #also, more importantly, need github setup -->
 #desire to commit every 15minutes, from within editor...
