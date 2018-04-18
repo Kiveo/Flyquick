@@ -20,25 +20,26 @@ class FlyQuick::CLI
 
   def make_selection
     puts "\nPlease enter the list number of your desired selection. Type exit to end program."
-    input = gets.strip.downcase
     #ideally case block will use variable generation...50 states is inefficient to type out.
-    while input != "exit"
-      case input
+    input1 = nil
+    while input1 != "exit"
+      input1 = gets.strip.downcase
+      case input1
       when "1"
-        puts "Listing of cities/airports within 1"
+        puts "\nListing of cities/airports within 1"
         break
       when "2"
-        puts "Listing of cities/airports within 2"
+        puts "\nListing of cities/airports within 2"
+        break
       when "3"
-        puts "Listing of cities/airports within 3"
+        puts "\nListing of cities/airports within 3"
+        break
       end
     end
-
-    def app_end
-      puts "Thank you for using Flyquick. Safe travels!"
-    end
-
   end
 
+  def app_end
+    puts "\nThank you for using Flyquick. Safe travels!"
+  end
 
 end #EOC
