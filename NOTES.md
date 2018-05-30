@@ -8,6 +8,8 @@ Goals
 <!-- 2. Connect to GitHub - -->
 <!-- 3. File runs program -->
 4. Stub design of functionality
+<!-- -stub selection menu segment -->
+-finish stubbing second selection menu (remove code from menu 1, call from call method itself)
 5. Code, update, review
 
 

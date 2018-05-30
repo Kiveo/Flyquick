@@ -5,6 +5,7 @@ class FlyQuick::CLI
     puts "Welcome to FlyQuick."
     list_states
     make_selection
+    second_selection
     app_end
   end
 
@@ -34,8 +35,17 @@ class FlyQuick::CLI
       when "3"
         puts "\nListing of cities/airports within 3"
         break
+      when "4"
+        puts "\nListing of cities/airports within 4"
+        break
       end
     end
+    puts "CALLING NEW METHOD LOOP FOR SECOND SELECTION..."
+    # Use call method?
+  end
+
+  def second_selection
+    puts "\nSelect the list number for the desireed airport:"
   end
 
   def app_end
