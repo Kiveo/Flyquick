@@ -5,6 +5,7 @@ class FlyQuick::CLI
     puts "Welcome to FlyQuick."
     list_states
     make_selection
+    list_airports
     second_selection
     app_end
   end
@@ -40,12 +41,41 @@ class FlyQuick::CLI
         break
       end
     end
-    puts "CALLING NEW METHOD LOOP FOR SECOND SELECTION..."
-    # Use call method?
+    puts "STATE SELECTED..."
+  end
+
+  def list_airports
+    #get_airports
+    puts "Here is a list of airports to review:"
+    puts "--"
+    puts "KBKV"
+    puts "KLAL"
+    puts "KZPH"
+    puts "Other"
   end
 
   def second_selection
     puts "\nSelect the list number for the desireed airport:"
+    #ideally case block will use variable generation...50 states is inefficient to type out.
+    input2 = nil
+    while input2 != "exit"
+      input2 = gets.strip.downcase
+      case input2
+      when "1"
+        puts "\nAirport 1 selected"
+        break
+      when "2"
+        puts "\nAirport 2 selected"
+        break
+      when "3"
+        puts "\nAirport 3 selected"
+        break
+      when "4"
+        puts "\nAirport 4 selected"
+        break
+      end
+    end
+    puts "AIRPORT SELECTED..."
   end
 
   def app_end

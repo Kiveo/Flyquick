@@ -18,7 +18,8 @@ Notes concerning development
 <!-- Git bash windows makes app code run out of order- must use cmd to execute bin file during development.  -->
 <!-- Alter requires- app was trying to call fq/bin/lib/fq instead of fq/lib/fq   -->
 
-Dev Inquieries
+Dev Thoughts
 ##how to get the cmd for atom?
+##Will FlyQuick lib folder or FlyQuick.rb naming cause issues? So far, no, but uncertain down the road.
 <!-- #also, more importantly, need github setup -->
 #desire to commit every 15minutes, from within editor...
