@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "./lib/flyquick"
+require_relative "../lib/FlyQuick/"
 
 #call the app
 FlyQuick::CLI.new.call
