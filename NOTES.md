@@ -14,6 +14,7 @@ Goals
 
 
 Notes concerning development
+remove repeating puts on restarts
 <!-- -Add segment to notes  -->
 <!-- Git bash windows makes app code run out of order- must use cmd to execute bin file during development.  -->
 <!-- Alter requires- app was trying to call fq/bin/lib/fq instead of fq/lib/fq   -->

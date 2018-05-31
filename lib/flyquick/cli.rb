@@ -48,19 +48,22 @@ class FlyQuick::CLI
     #get_airports
     puts "Here is a list of airports to review:"
     puts "--"
-    puts "KBKV"
-    puts "KLAL"
-    puts "KZPH"
-    puts "Other"
+    puts "1. KBKV"
+    puts "2. KLAL"
+    puts "3. KZPH"
+    puts "4. Other"
   end
 
   def second_selection
-    puts "\nSelect the list number for the desireed airport:"
+    puts "\nSelect by typing the number associated with desireed airport. Type 'restart' or 'exit' to return to top menu or close."
     #ideally case block will use variable generation...50 states is inefficient to type out.
     input2 = nil
     while input2 != "exit"
       input2 = gets.strip.downcase
       case input2
+      when "restart"
+        puts "restarting..."
+        return call                 #ADJUST MECHANISM HERE 
       when "1"
         puts "\nAirport 1 selected"
         break
