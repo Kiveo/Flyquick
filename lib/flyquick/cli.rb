@@ -5,8 +5,8 @@ class FlyQuick::CLI
     puts "Welcome to FlyQuick."
     list_states
     make_selection
-    list_airports
-    second_selection
+    # list_airports
+    # second_selection
     app_end
   end
 
@@ -40,6 +40,7 @@ class FlyQuick::CLI
         puts "\nListing of cities/airports within 4"
         break
       end
+      second_selection
     end
     puts "STATE SELECTED..."
   end
@@ -55,6 +56,7 @@ class FlyQuick::CLI
   end
 
   def second_selection
+    list_airports
     puts "\nSelect by typing the number associated with desireed airport. Type 'restart' or 'exit' to return to top menu or close."
     #ideally case block will use variable generation...50 states is inefficient to type out.
     input2 = nil
@@ -63,7 +65,8 @@ class FlyQuick::CLI
       case input2
       when "restart"
         puts "restarting..."
-        return call                 #ADJUST MECHANISM HERE 
+        list_states
+        return make_selection                 #ADJUST MECHANISM HERE
       when "1"
         puts "\nAirport 1 selected"
         break
