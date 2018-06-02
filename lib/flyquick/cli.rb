@@ -40,9 +40,10 @@ class FlyQuick::CLI
         puts "\nListing of cities/airports within 4"
         break
       end
-      second_selection
     end
-    puts "STATE SELECTED..."
+    puts "SELECTION MADE...Option #{input1} selected"
+    # input1 == "exit" ? "User selected to exit." : second_selection
+    puts input1 == "exit" ? "User selected to exit" : second_selection
   end
 
   def list_airports

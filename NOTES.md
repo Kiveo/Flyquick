@@ -14,7 +14,7 @@ Goals
 
 
 Notes concerning development
-remove repeating puts on restarts. Removed, but still needs to address exit (works for submenu but not primary. Try a method variable tracker?)
+<!-- remove repeating puts on restarts. Removed, but still needs to address exit (exit and repeats function as intended. used submenu+ternary) -->
 <!-- -Add segment to notes  -->
 <!-- Git bash windows makes app code run out of order- must use cmd to execute bin file during development.  -->
 <!-- Alter requires- app was trying to call fq/bin/lib/fq instead of fq/lib/fq   -->
