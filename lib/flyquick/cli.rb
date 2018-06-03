@@ -12,12 +12,12 @@ class FlyQuick::CLI
 
   def list_states
     #get_states
-    puts "Here is a list of states to search for an airport:"
+    puts "Here is a list of states to search for an airport within:"
     puts "--"
-    puts "Florida"
-    puts "Georgia"
-    puts "Texas"
-    puts "Other"
+    puts "1. Florida"
+    puts "2. Georgia"
+    puts "3. Texas"
+    puts "4. Other"
   end
 
   def make_selection
@@ -28,16 +28,16 @@ class FlyQuick::CLI
       input1 = gets.strip.downcase
       case input1
       when "1"
-        puts "\nListing of cities/airports within 1"
+        puts "\nListing of cities/airports within FL acquired..."
         break
       when "2"
-        puts "\nListing of cities/airports within 2"
+        puts "\nListing of cities/airports within GA acquired..."
         break
       when "3"
-        puts "\nListing of cities/airports within 3"
+        puts "\nListing of cities/airports within TX acquired..."
         break
       when "4"
-        puts "\nListing of cities/airports within 4"
+        puts "\nListing of cities/airports within XYZ acquired..."
         break
       else
         puts "Unrecognized input. Please enter a listed number or type exit"
@@ -50,7 +50,7 @@ class FlyQuick::CLI
 
   def list_airports
     #get_airports
-    puts "Here is a list of airports to review:"
+    puts "Here is a list of airports to select amongst:"
     puts "--"
     puts "1. KBKV"
     puts "2. KLAL"
@@ -60,7 +60,7 @@ class FlyQuick::CLI
 
   def second_selection
     list_airports
-    puts "\nSelect by typing the number associated with desireed airport. Type 'restart' or 'exit' to return to top menu or close."
+    puts "\nSelect by typing the number associated with desired airport. Type 'restart' or 'exit' to return to top menu or close."
     #ideally case block will use variable generation...50 states is inefficient to type out.
     input2 = nil
     while input2 != "exit"
@@ -86,7 +86,7 @@ class FlyQuick::CLI
         puts "Unrecognized input. Please enter a listed number, type restart, or type exit"
       end
     end
-    puts "AIRPORT SELECTED..."
+    puts "Airport data based on selection #{input2}..."
   end
 
   def app_end
