@@ -39,6 +39,8 @@ class FlyQuick::CLI
       when "4"
         puts "\nListing of cities/airports within 4"
         break
+      else
+        puts "Unrecognized input. Please enter a listed number or type exit"
       end
     end
     puts "SELECTION MADE...Option #{input1} selected"
@@ -80,6 +82,8 @@ class FlyQuick::CLI
       when "4"
         puts "\nAirport 4 selected"
         break
+      else
+        puts "Unrecognized input. Please enter a listed number, type restart, or type exit"
       end
     end
     puts "AIRPORT SELECTED..."
