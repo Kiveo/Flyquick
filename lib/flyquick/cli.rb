@@ -5,8 +5,6 @@ class FlyQuick::CLI
     puts "Welcome to FlyQuick."
     list_states
     make_selection
-    # list_airports
-    # second_selection
     app_end
   end
 
@@ -69,9 +67,10 @@ class FlyQuick::CLI
       when "restart"
         puts "restarting..."
         list_states
-        return make_selection                 #ADJUST MECHANISM HERE
+        return make_selection               
       when "1"
         puts "\nAirport 1 selected"
+        FlyQuick::Airport.current
         break
       when "2"
         puts "\nAirport 2 selected"
