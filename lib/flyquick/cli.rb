@@ -48,12 +48,13 @@ class FlyQuick::CLI
 
   def list_airports
     #get_airports
-    puts "Here is a list of airports to select amongst:"
-    puts "--"
-    puts "1. KBKV"
-    puts "2. KLAL"
-    puts "3. KZPH"
-    puts "4. Other"
+    FlyQuick::airport_list.airports  
+    # puts "Here is a list of airports to select amongst:"
+    # puts "--"
+    # puts "1. KBKV"
+    # puts "2. KLAL"
+    # puts "3. KZPH"
+    # puts "4. Other"
   end
 
   def second_selection
@@ -67,7 +68,7 @@ class FlyQuick::CLI
       when "restart"
         puts "restarting..."
         list_states
-        return make_selection               
+        return make_selection
       when "1"
         puts "\nAirport 1 selected"
         FlyQuick::Airport.current
