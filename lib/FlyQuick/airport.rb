@@ -3,7 +3,8 @@ class FlyQuick::Airport
 
 
   def self.current
-    puts "Airports for today! Here and there, and everywhere."
+    puts "1. Zephyrhills"
+    puts "2. Tampa"
 
     airport_1 = self.new
     airport_1.name = "Zephyrhills"
@@ -19,7 +20,7 @@ class FlyQuick::Airport
     airport_2.wx = "WX PHONE 813-873-7228"
     airport_2.runways = "1L/19R"
 
-    puts "#{[airport_1, airport_2]}"
+    [airport_1, airport_2] 
   end
 
 end #EOC

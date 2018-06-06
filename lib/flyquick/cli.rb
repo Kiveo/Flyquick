@@ -45,7 +45,7 @@ class FlyQuick::CLI
 
   def list_airports
     #get_airports?
-    @airports = FlyQuick::Airport_List.list_airports
+    @airports = FlyQuick::Airport.current
   end
 
   def second_selection
@@ -55,27 +55,36 @@ class FlyQuick::CLI
     input2 = nil
     while input2 != "exit"
       input2 = gets.strip.downcase
-      case input2
-      when "restart"
-        puts "restarting..."
+      if input2.to_i > 0
+        puts @airports[input2.to_i-1]
+      elsif input2 = "restart"
         list_states
         return make_selection
-      when "1"
-        puts "\nAirport 1 selected"
-        FlyQuick::Airport.current
-        break
-      when "2"
-        puts "\nAirport 2 selected"
-        break
-      when "3"
-        puts "\nAirport 3 selected"
-        break
-      when "4"
-        puts "\nAirport 4 selected"
-        break
       else
-        puts "Unrecognized input. Please enter a listed number, type restart, or type exit"
+        puts "Unrecognized input. Please input a listed number, type restart, or type exit"
       end
+
+      # case input2
+      # when "restart"
+      #   puts "restarting..."
+      #   list_states
+      #   return make_selection
+      # when "1"
+      #   puts "\nAirport 1 selected"
+      #   FlyQuick::Airport.current
+      #   break
+      # when "2"
+      #   puts "\nAirport 2 selected"
+      #   break
+      # when "3"
+      #   puts "\nAirport 3 selected"
+      #   break
+      # when "4"
+      #   puts "\nAirport 4 selected"
+      #   break
+      # else
+      #   puts "Unrecognized input. Please enter a listed number, type restart, or type exit"
+      # end
     end
     puts "Airport data based on selection #{input2}..."
   end
