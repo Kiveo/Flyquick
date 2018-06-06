@@ -12,10 +12,7 @@ class FlyQuick::CLI
     #get_states
     puts "Here is a list of states to search for an airport within:"
     puts "--"
-    puts "1. Florida"
-    puts "2. Georgia"
-    puts "3. Texas"
-    puts "4. Other"
+    FlyQuick::State_List.list_states
   end
 
   def make_selection
@@ -47,14 +44,8 @@ class FlyQuick::CLI
   end
 
   def list_airports
-    #get_airports
-    FlyQuick::Airport_List.list_airports  
-    # puts "Here is a list of airports to select amongst:"
-    # puts "--"
-    # puts "1. KBKV"
-    # puts "2. KLAL"
-    # puts "3. KZPH"
-    # puts "4. Other"
+    #get_airports?
+    FlyQuick::Airport_List.list_airports
   end
 
   def second_selection
