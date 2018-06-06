@@ -34,8 +34,10 @@ class FlyQuick::CLI
       when "4"
         puts "\nListing of cities/airports acquired..."
         break
+      when "exit"
+        break
       else
-        puts "Unrecognized input. Please enter a listed number or type exit"
+        puts "Unrecognized input. Please enter a listed number or type exit(Menu 1)"
       end
     end
     puts "SELECTION MADE...Option #{input1} selected"
@@ -55,11 +57,14 @@ class FlyQuick::CLI
     input2 = nil
     while input2 != "exit"
       input2 = gets.strip.downcase
-      if input2.to_i > 0
+      if input2.to_i > 0 && input2 != "exit"
         puts @airports[input2.to_i-1]
-      elsif input2 = "restart"
+        break
+      elsif input2 == "restart"
         list_states
         return make_selection
+      elsif input2 == "exit"
+        break
       else
         puts "Unrecognized input. Please input a listed number, type restart, or type exit"
       end
