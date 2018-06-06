@@ -12,7 +12,7 @@ class FlyQuick::Airport
     #scrape array info
     airports << self.scrape_airnav
 
-    [airports]
+    airports
   end
   # #Need to scrape to get similar to this block
   # airport_1 = self.new
@@ -32,6 +32,8 @@ class FlyQuick::Airport
   # [airport_1, airport_2]
 
   def self.scrape_airnav
+    airport = self.new
+
     doc = Nokogiri::HTML(open("https://www.airnav.com/airports/us/FL"))  #I want this to change based on menu 1 selection of state... ideally. !!!!!!!!!!!
     tables = doc.search('table')
     table = tables[3] # third table in the document contains all the airport links and names for the state
@@ -39,13 +41,12 @@ class FlyQuick::Airport
     airport_link = table_data[0].inner_html   #sample, first link text
 
     doc2 = Nokogiri::HTML(open("https://www.airnav.com/airport/#{airport_link}"))
-    # airport = self.new
     airport_tables = doc2.search('table')
     airport_table = airport_tables[3]
     # airport_name = airport_table.attr("b")
-    name = airport_table.search("b")[1].inner_html
-
-    binding.pry
+    airport.name = airport_table.search("b")[1].inner_html
+    airport
+    # binding.pry
 
   end
 
