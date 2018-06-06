@@ -37,7 +37,8 @@ class FlyQuick::Airport
 
     tables = doc.search('table')
     table = tables[3] # third table in the document contains all the airport links and names for the state
-    table_data = table.search('a').inner_html
+    table_data = table.search('a')
+    airport_link = table_data[0].inner_html
     # names = table_data.search('a href').inner_html
     # name = names[1]
     binding.pry
