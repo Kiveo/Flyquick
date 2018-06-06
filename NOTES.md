@@ -15,6 +15,7 @@ Goals
 
 
 Notes concerning development
+adding pry and nokogiri for further coding/testing.
 Scrape airport list from airnav...based on state selection? maybe stub state?
 <!-- Just in case capture doesnt include alt tabs- git add's, chrome tab with resource air nav page up, and ... a lot of thinking too much =)  -->
 <!-- remove repeating puts on restarts. Removed, but still needs to address exit (exit and repeats function as intended. used submenu+ternary) -->
