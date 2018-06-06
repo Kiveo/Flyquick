@@ -48,7 +48,7 @@ class FlyQuick::CLI
 
   def list_airports
     #get_airports
-    FlyQuick::airport_list.airports  
+    FlyQuick::Airport_List.list_airports  
     # puts "Here is a list of airports to select amongst:"
     # puts "--"
     # puts "1. KBKV"
