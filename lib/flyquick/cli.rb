@@ -40,23 +40,22 @@ class FlyQuick::CLI
         puts "Unrecognized input. Please enter a listed number or type exit(Menu 1)"
       end
     end
+    
     puts "SELECTION MADE...Option #{input1} selected"
-    # input1 == "exit" ? "User selected to exit." : second_selection
     puts input1 == "exit" ? "User selected to exit" : second_selection
   end
 
   def list_airports
-    #get_airports?
     @airports = FlyQuick::Airport.current
   end
 
   def second_selection
     list_airports
     puts "\nSelect by typing the number associated with desired airport. Type 'restart' or 'exit' to return to top menu or close."
-    #ideally case block will use variable generation...50 states is inefficient to type out.
     input2 = nil
     while input2 != "exit"
       input2 = gets.strip.downcase
+
       if input2.to_i > 0 && input2 != "exit"
         puts @airports[input2.to_i-1]
         break
@@ -68,28 +67,6 @@ class FlyQuick::CLI
       else
         puts "Unrecognized input. Please input a listed number, type restart, or type exit"
       end
-
-      # case input2
-      # when "restart"
-      #   puts "restarting..."
-      #   list_states
-      #   return make_selection
-      # when "1"
-      #   puts "\nAirport 1 selected"
-      #   FlyQuick::Airport.current
-      #   break
-      # when "2"
-      #   puts "\nAirport 2 selected"
-      #   break
-      # when "3"
-      #   puts "\nAirport 3 selected"
-      #   break
-      # when "4"
-      #   puts "\nAirport 4 selected"
-      #   break
-      # else
-      #   puts "Unrecognized input. Please enter a listed number, type restart, or type exit"
-      # end
     end
     puts "Airport data based on selection #{input2}..."
   end

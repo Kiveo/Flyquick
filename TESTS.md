@@ -20,3 +20,26 @@
 #   puts "WX ASOS: 	118.975"
 #   puts "Sectional image @ http://vfrmap.com/?type=vfrc&lat=28.228&lon=-82.156&zoom=10" ?
 #  end -->
+
+
+<!-- #Original stubbing for airport selection within second_selection method of cli  # case input2
+  # when "restart"
+  #   puts "restarting..."
+  #   list_states
+  #   return make_selection
+  # when "1"
+  #   puts "\nAirport 1 selected"
+  #   FlyQuick::Airport.current
+  #   break
+  # when "2"
+  #   puts "\nAirport 2 selected"
+  #   break
+  # when "3"
+  #   puts "\nAirport 3 selected"
+  #   break
+  # when "4"
+  #   puts "\nAirport 4 selected"
+  #   break
+  # else
+  #   puts "Unrecognized input. Please enter a listed number, type restart, or type exit"
+  # end -->
