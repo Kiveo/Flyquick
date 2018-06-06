@@ -4,6 +4,11 @@ class FlyQuick::Airport
 
   def self.current
 
+    self.scrape_airports
+  end
+
+  def self.scrape_airports
+    #Need to scrape to get similar to this block
     airport_1 = self.new
     airport_1.name = "Zephyrhills"
     airport_1.ident = "KZPH"
