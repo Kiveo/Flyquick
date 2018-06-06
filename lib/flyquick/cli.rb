@@ -40,13 +40,17 @@ class FlyQuick::CLI
         puts "Unrecognized input. Please enter a listed number or type exit(Menu 1)"
       end
     end
-    
+
     puts "SELECTION MADE...Option #{input1} selected"
     puts input1 == "exit" ? "User selected to exit" : second_selection
   end
 
   def list_airports
     @airports = FlyQuick::Airport.current
+    @airports.each.with_index(1) do |airport, i|
+      puts "#{i} #{airport.name} #{airport.ident}"
+      # puts "End of Airport List"
+    end
   end
 
   def second_selection
