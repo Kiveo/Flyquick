@@ -61,7 +61,8 @@ class FlyQuick::CLI
       input2 = gets.strip.downcase
 
       if input2.to_i > 0 && input2 != "exit"
-        puts @airports[input2.to_i-1]
+        selected_airport = @airports[input2.to_i-1]
+        puts "#{selected_airport.name} Ident: #{selected_airport.ident} Tower: #{selected_airport.tower}"
         break
       elsif input2 == "restart"
         list_states

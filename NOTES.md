@@ -14,7 +14,6 @@ Goals
 
 
 Notes concerning development
-stubbing out airport class info.  Consider using get_airport vs list_airport?
 <!-- Just in case capture doesnt include alt tabs- git add's, chrome tab with resource air nav page up, and ... a lot of thinking too much =)  -->
 <!-- remove repeating puts on restarts. Removed, but still needs to address exit (exit and repeats function as intended. used submenu+ternary) -->
 <!-- -Add segment to notes  -->
