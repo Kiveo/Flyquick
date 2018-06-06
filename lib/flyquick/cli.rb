@@ -12,7 +12,7 @@ class FlyQuick::CLI
     #get_states
     puts "Here is a list of states to search for an airport within:"
     puts "--"
-    FlyQuick::State_List.list_states
+    @states = FlyQuick::State_List.list_states
   end
 
   def make_selection
@@ -23,16 +23,16 @@ class FlyQuick::CLI
       input1 = gets.strip.downcase
       case input1
       when "1"
-        puts "\nListing of cities/airports within FL acquired..."
+        puts "\nListing of cities/airports acquired..."
         break
       when "2"
-        puts "\nListing of cities/airports within GA acquired..."
+        puts "\nListing of cities/airports acquired..."
         break
       when "3"
-        puts "\nListing of cities/airports within TX acquired..."
+        puts "\nListing of cities/airports acquired..."
         break
       when "4"
-        puts "\nListing of cities/airports within XYZ acquired..."
+        puts "\nListing of cities/airports acquired..."
         break
       else
         puts "Unrecognized input. Please enter a listed number or type exit"
@@ -45,7 +45,7 @@ class FlyQuick::CLI
 
   def list_airports
     #get_airports?
-    FlyQuick::Airport_List.list_airports
+    @airports = FlyQuick::Airport_List.list_airports
   end
 
   def second_selection
