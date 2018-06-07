@@ -2,7 +2,7 @@
 class FlyQuick::CLI
 
   def call
-    puts "Welcome to FlyQuick."
+    puts "--------------------Welcome to FlyQuick!--------------------"
     list_states
     make_selection
     app_end
@@ -11,8 +11,8 @@ class FlyQuick::CLI
   #-----------------------------------------------------------------------
   def list_states
     #get_states
-    puts "Here is a list of states to search for an airport within:"
-    puts "--"
+    puts "\nHere is a list of states to search for an airport within:"
+    puts "------------------------------------------------------------"
     @states = FlyQuick::State.list  #for user readability. Full state names
     @shorts = FlyQuick::State.short_list  #for url alteration. Shorthand state names such as GA, FL, etc.
     @states.each.with_index(1) do |state, i|
@@ -28,7 +28,6 @@ class FlyQuick::CLI
   #-----------------------------------------------------------------------
   def make_selection
     puts "\nPlease enter the list number of your desired selection. Type exit to end program."
-    #ideally case block will use variable generation...50 states is inefficient to type out.
     input1 = nil
     while input1 != "exit"
       input1 = gets.strip.downcase
@@ -45,17 +44,15 @@ class FlyQuick::CLI
       end
 
     end
-
-    puts "SELECTION MADE...Option #{input1} selected"
     puts input1 == "exit" ? "User selected to exit" : second_selection
   end
 
   #-----------------------------------------------------------------------
   def list_airports
+    puts "------------------------------------------------------------"
     @airports = FlyQuick::Airport.list
     @airports.each.with_index(1) do |airport, i|
       puts "#{i} #{airport} (FAA IDENTIFIER)"
-      # puts "End of Airport List"
     end
   end
 
@@ -81,7 +78,6 @@ class FlyQuick::CLI
         puts "  #{@airport_object.wx}" #wx frequency
         puts "#{@airport_object.runways.gsub(/R/, "  R")}" #weather frequency/phone
         puts "\nPlease input an airport number, type restart, or type exit"
-        # break
       elsif input2 == "restart"
         list_states
         return make_selection

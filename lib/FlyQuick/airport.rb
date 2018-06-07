@@ -39,7 +39,6 @@ class FlyQuick::Airport
     airport.wx = airport_com_table.at("tr[2]").text
 
     airport.runways = doc2.search("h4").text
-    # binding.pry
     airport
   end
 
