@@ -46,12 +46,20 @@ class FlyQuick::CLI
   end
 
   def list_airports
-    @airports = FlyQuick::Airport.current
+    @airports = FlyQuick::Airport.all
     @airports.each.with_index(1) do |airport, i|
-      puts "#{i} #{airport.name} #{airport.ident}"
+      puts "#{i} #{airport} NEW MENU"
       # puts "End of Airport List"
     end
   end
+  #-----------------------------------------------------------------------
+  # def list_airports
+  #   @airports = FlyQuick::Airport.current
+  #   @airports.each.with_index(1) do |airport, i|
+  #     puts "#{i} #{airport.name} OLD MENU"
+  #     # puts "End of Airport List"
+  #   end
+  # end
 
   def second_selection
     list_airports
@@ -62,7 +70,9 @@ class FlyQuick::CLI
 
       if input2.to_i > 0 && input2 != "exit"
         selected_airport = @airports[input2.to_i-1]
-        puts "#{selected_airport.name} Ident: #{selected_airport.ident} Tower: #{selected_airport.tower}"
+        puts "#{selected_airport.name}"
+        puts "Ident: #{selected_airport.ident}"
+        puts "Tower: #{selected_airport.tower}"
         break
       elsif input2 == "restart"
         list_states
