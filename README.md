@@ -45,3 +45,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/Kiveo/FlyQuick.
+I retain all rights to my source code and no one may reproduce, distribute, or create derivative works from my work without express permission from me.
+Contact me via the GitHub referenced above (https://github.com/Kiveo).
+Respective licenses for Ruby, Github, and associated development tools belong to their respective bodies.
