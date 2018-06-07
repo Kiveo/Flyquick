@@ -45,22 +45,20 @@ class FlyQuick::CLI
     puts input1 == "exit" ? "User selected to exit" : second_selection
   end
 
+  #-----------------------------------------------------------------------
   def list_airports
     @airports = FlyQuick::Airport.all
     @airports.each.with_index(1) do |airport, i|
-      puts "#{i} #{airport} NEW MENU"
+      puts "#{i} #{airport} (FAA IDENTIFIER)"
       # puts "End of Airport List"
     end
   end
-  #-----------------------------------------------------------------------
-  # def list_airports
-  #   @airports = FlyQuick::Airport.current
-  #   @airports.each.with_index(1) do |airport, i|
-  #     puts "#{i} #{airport.name} OLD MENU"
-  #     # puts "End of Airport List"
-  #   end
-  # end
 
+  def airport_method
+    @airport_object = FlyQuick::Airport.current(selected_airport)
+  end
+
+  #-----------------------------------------------------------------------
   def second_selection
     list_airports
     puts "\nSelect by typing the number associated with desired airport. Type 'restart' or 'exit' to return to top menu or close."
@@ -69,8 +67,11 @@ class FlyQuick::CLI
       input2 = gets.strip.downcase
 
       if input2.to_i > 0 && input2 != "exit"
-        selected_airport = @airports[input2.to_i-1]
-        puts "#{selected_airport.name}"
+        selected_airport = @airports[input2.to_i-1] #user selected airport, from previously provided list.
+        #Need to dive deeper than list and scrape from airport specific page for attributes, such as name, tower, etc.
+  #-----------------------------------------------------------------------
+        airport_method
+        puts "#{airport_object.name}"
         puts "Ident: #{selected_airport.ident}"
         puts "Tower: #{selected_airport.tower}"
         break
