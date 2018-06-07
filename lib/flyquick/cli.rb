@@ -73,7 +73,7 @@ class FlyQuick::CLI
         airport_method(selected_airport)
         puts "#{@airport_object.name}"
         puts "Ident: #{@airport_object.ident}"
-        puts "Tower: #{@airport_object.tower}"
+        puts "Tower or Unicom: #{@airport_object.tower}"
         break
       elsif input2 == "restart"
         list_states
