@@ -1,6 +1,6 @@
 class FlyQuick::State
 
-  def self.list #call from cli
+  def self.list #called from cli
     self.scraped_state_list
   end
 

@@ -2,5 +2,5 @@
 
 require_relative "../lib/FlyQuick/"
 
-#call the app
+#calls the CLI app 
 FlyQuick::CLI.new.call

@@ -72,6 +72,7 @@ class FlyQuick::CLI
         selected_airport = @airports[input2.to_i-1] #user selected airport, from previously provided list.
         #Need to dive deeper than list and scrape from airport specific page for attributes, such as name, tower, etc.
         airport_method(selected_airport)
+        puts "---------- FLYQUICK ----------"
         puts "  #{@airport_object.name}"
         puts "  Ident: #{@airport_object.ident}" #faa identifier
         puts "  #{@airport_object.tower}"  #comm frequency

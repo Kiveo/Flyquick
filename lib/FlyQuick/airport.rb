@@ -5,7 +5,7 @@ class FlyQuick::Airport
     @airport_state = selected_state
   end
   #------------------------------------------------------------------------------
-  def self.list #call from cli
+  def self.list #called from cli
     self.scraped_airport_list
   end
 
@@ -32,12 +32,23 @@ class FlyQuick::Airport
     airport_tables = doc2.search('table')
     airport_name_table = airport_tables[3]
     airport.ident = airport_name_table.search("b")[0].inner_html
-    airport.name = airport_name_table.search("b")[1].inner_html
-
+    if airport_name_table.search("b")[0] != nil
+      airport.name = airport_name_table.search("b")[1].inner_html
+    else
+      airport.name = "Name: Not Listed"
+    end
     airport_com_table = airport_tables[9]
-    airport.tower = airport_com_table.at("tr[1]").text
-    airport.wx = airport_com_table.at("tr[2]").text
-
+    # puts "#{airport_com_table.at("tr[1]").text}" #tower frequency
+    if airport_com_table.at("tr[1]") != nil
+      airport.tower = airport_com_table.at("tr[1]").text
+    else
+      airport.tower = "TOWER: Not Listed"
+    end
+    if airport_com_table.at("tr[2]") != nil
+      airport.wx = airport_com_table.at("tr[2]").text
+    else
+      airport.wx = "WX: Not Listed"
+    end
     airport.runways = doc2.search("h4").text
     airport
   end

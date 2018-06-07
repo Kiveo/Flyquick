@@ -1,8 +1,8 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "FlyQuick/version"
 
+require "FlyQuick/version"
 Gem::Specification.new do |spec|
   spec.name          = "FlyQuick"
   spec.version       = FlyQuick::VERSION

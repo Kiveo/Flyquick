@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) {|Kiveo/Flyquick| "https://github.com/Kiveo/Flyquick" }
 
-# Specify your gem's dependencies in FlyQuick.gemspec
+# Gem's dependencies in FlyQuick.gemspec
 gemspec
