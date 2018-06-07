@@ -1,13 +1,17 @@
 class FlyQuick::Airport
   attr_accessor :ident, :name, :tower, :wx, :runways
 
+  def self.state_selector(selected_state)
+    @airport_state = selected_state
+  end
+  #------------------------------------------------------------------------------
   def self.list #call from cli
     self.scraped_airport_list
   end
 
   def self.scraped_airport_list  #scrape list of state airports
     airport_collection = []
-    doc = Nokogiri::HTML(open("https://www.airnav.com/airports/us/FL"))  #I want this to change based on menu 1 selection of state... ideally.
+    doc = Nokogiri::HTML(open("https://www.airnav.com/airports/us/#{airport_state}"))  #I want this to change based on menu 1 selection of state... ideally.
     tables = doc.search('table')
     table = tables[3] # third table in the document contains all the airport links and names for the state
     airport_links = table.search('a') #grab the links within the table, for lack of css classes or id's

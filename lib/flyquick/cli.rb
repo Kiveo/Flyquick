@@ -13,15 +13,16 @@ class FlyQuick::CLI
     #get_states
     puts "Here is a list of states to search for an airport within:"
     puts "--"
-    @states = FlyQuick::State.list
+    @states = FlyQuick::State.short_list
     @states.each.with_index(1) do |state, i|
       puts "#{i} #{state} (USA)"
     end
   end
 
-  # def state_method(selected_state)
-  #   @state_object = FlyQuick::Airport.state_selector(selected_state)
-  # end
+  def state_method(selected_state)
+    # @state_object = FlyQuick::Airport.state_selector(selected_state)
+    FlyQuick::Airport.state_selector(selected_state)
+  end
 
   #-----------------------------------------------------------------------
   def make_selection
@@ -30,24 +31,17 @@ class FlyQuick::CLI
     input1 = nil
     while input1 != "exit"
       input1 = gets.strip.downcase
-      case input1
-      when "1"
-        puts "\nListing of cities/airports acquired..."
-        break
-      when "2"
-        puts "\nListing of cities/airports acquired..."
-        break
-      when "3"
-        puts "\nListing of cities/airports acquired..."
-        break
-      when "4"
-        puts "\nListing of cities/airports acquired..."
-        break
-      when "exit"
+
+      if input1.to_i > 0 && input1.to_i < 52 && input1 != "exit"
+        puts "For Reference: #{@states[input1.to_i-1]}"
+        selected_state = @states[input1.to_i-1]
+        state_method(selected_state)
+      elsif input1 == "exit"
         break
       else
-        puts "Unrecognized input. Please enter a listed number or type exit(Menu 1)"
+        puts "Unrecognized input. Please input a listed number or type exit"
       end
+
     end
 
     puts "SELECTION MADE...Option #{input1} selected"
