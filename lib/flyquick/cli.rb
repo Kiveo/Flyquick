@@ -54,7 +54,7 @@ class FlyQuick::CLI
     end
   end
 
-  def airport_method
+  def airport_method(selected_airport)
     @airport_object = FlyQuick::Airport.current(selected_airport)
   end
 
@@ -70,10 +70,10 @@ class FlyQuick::CLI
         selected_airport = @airports[input2.to_i-1] #user selected airport, from previously provided list.
         #Need to dive deeper than list and scrape from airport specific page for attributes, such as name, tower, etc.
   #-----------------------------------------------------------------------
-        airport_method
-        puts "#{airport_object.name}"
-        puts "Ident: #{selected_airport.ident}"
-        puts "Tower: #{selected_airport.tower}"
+        airport_method(selected_airport)
+        puts "#{@airport_object.name}"
+        puts "Ident: #{@airport_object.ident}"
+        puts "Tower: #{@airport_object.tower}"
         break
       elsif input2 == "restart"
         list_states
