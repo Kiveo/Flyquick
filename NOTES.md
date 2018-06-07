@@ -15,8 +15,10 @@ Goals
 
 
 Notes concerning development
-adding pry and nokogiri for further coding/testing.
-Scrape airport list from airnav...based on state selection? maybe stub state?
+Need to add more details to individual airport objects via scraping
+List states needs to be addressed or removed, eventually. 
+<!-- adding pry and nokogiri for further coding/testing. -->
+<!-- Scrape airport list from airnav...based on state selection? maybe stub state? -->
 <!-- Just in case capture doesnt include alt tabs- git add's, chrome tab with resource air nav page up, and ... a lot of thinking too much =)  -->
 <!-- remove repeating puts on restarts. Removed, but still needs to address exit (exit and repeats function as intended. used submenu+ternary) -->
 <!-- -Add segment to notes  -->
@@ -24,7 +26,6 @@ Scrape airport list from airnav...based on state selection? maybe stub state?
 <!-- Alter requires- app was trying to call fq/bin/lib/fq instead of fq/lib/fq   -->
 
 Dev Thoughts
-#Scrape method , following procedural thought, so that solidying a class might be easier. See what feels right.
-
+#clean up code, lots of loose, fluff, and vestigial remnants.
 ##Will FlyQuick lib folder or FlyQuick.rb naming cause issues? So far, no, but uncertain down the road.
 <!-- #desire to commit every 15minutes, from within editor... -->
