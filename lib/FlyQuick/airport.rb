@@ -32,11 +32,12 @@ class FlyQuick::Airport
     airport.ident = airport_name_table.search("b")[0].inner_html
     airport.name = airport_name_table.search("b")[1].inner_html
     airport_com_table = airport_tables[9]
-    airport.tower = airport_com_table.at("td[2]").text
+    airport.tower = airport_com_table.at("tr[1]").text
+    airport.tower = airport_com_table.at("tr[2]").text
     # body > table:nth-child(8) > tbody > tr > td:nth-child(1) > table:nth-child(10) > tbody > tr:nth-child(1)
     # airport_ops_table = airport_tables[8]
 
-    # binding.pry
+    binding.pry
     airport
   end
 

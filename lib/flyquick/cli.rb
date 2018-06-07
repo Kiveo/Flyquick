@@ -72,8 +72,9 @@ class FlyQuick::CLI
   #-----------------------------------------------------------------------
         airport_method(selected_airport)
         puts "#{@airport_object.name}"
-        puts "Ident: #{@airport_object.ident}"
-        puts "Tower or Unicom: #{@airport_object.tower}"
+        puts "Ident: #{@airport_object.ident}" #faa identifier
+        puts "#{@airport_object.tower}"  #comm frequency
+        puts "#{@airport_object.wx}" #weather frequency/phone 
         break
       elsif input2 == "restart"
         list_states
