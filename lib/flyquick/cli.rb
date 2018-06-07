@@ -13,7 +13,8 @@ class FlyQuick::CLI
     #get_states
     puts "Here is a list of states to search for an airport within:"
     puts "--"
-    @states = FlyQuick::State.short_list
+    @states = FlyQuick::State.list  #for user readability. Full state names
+    @shorts = FlyQuick::State.short_list  #for url alteration. Shorthand state names such as GA, FL, etc.
     @states.each.with_index(1) do |state, i|
       puts "#{i} #{state} (USA)"
     end
@@ -34,8 +35,9 @@ class FlyQuick::CLI
 
       if input1.to_i > 0 && input1.to_i < 52 && input1 != "exit"
         puts "For Reference: #{@states[input1.to_i-1]}"
-        selected_state = @states[input1.to_i-1]
+        selected_state = @shorts[input1.to_i-1]
         state_method(selected_state)
+        break
       elsif input1 == "exit"
         break
       else
@@ -69,7 +71,7 @@ class FlyQuick::CLI
     while input2 != "exit"
       input2 = gets.strip.downcase
 
-      if input2.to_i > 0 && input2 != "exit"
+      if input2.to_i > 0 && input2.to_i < @airports.length+1 && input2 != "exit"
         selected_airport = @airports[input2.to_i-1] #user selected airport, from previously provided list.
         #Need to dive deeper than list and scrape from airport specific page for attributes, such as name, tower, etc.
         airport_method(selected_airport)
