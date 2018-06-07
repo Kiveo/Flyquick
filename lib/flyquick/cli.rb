@@ -47,7 +47,7 @@ class FlyQuick::CLI
 
   #-----------------------------------------------------------------------
   def list_airports
-    @airports = FlyQuick::Airport.all
+    @airports = FlyQuick::Airport.list
     @airports.each.with_index(1) do |airport, i|
       puts "#{i} #{airport} (FAA IDENTIFIER)"
       # puts "End of Airport List"

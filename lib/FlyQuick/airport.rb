@@ -2,11 +2,11 @@ class FlyQuick::Airport
   attr_accessor :name, :ident, :tower, :wx, :runways
 
   #-----------------------------------------------------------------------
-  def self.all #testing alternate method for acquiring airport list method scrape
+  def self.list
     self.scraped_airport_list
   end
+  
   def self.scraped_airport_list
-    # airport = self.new
     airport_collection = []
     doc = Nokogiri::HTML(open("https://www.airnav.com/airports/us/FL"))  #I want this to change based on menu 1 selection of state... ideally. !!!!!!!!!!!
     tables = doc.search('table')
@@ -16,13 +16,9 @@ class FlyQuick::Airport
       airport_collection << link.inner_html
     end
     airport_collection
-    # airport_link = table_data[0].inner_html   #sample, first link text
-    # #want to replace airport_link with loop of airport link(s)...somewhere. here?
-    # airport_link = table_data.each |link|
-    #   airports << link.inner_html
   end
 #------------------------------------------------------------------------------
-  def self.current(user_selection)
+  def self.current(user_selection)   #redundant or separate method of sole responsibility? (ie not scraping and being called)
     self.scrape_selected_airport(user_selection)
   end
 
