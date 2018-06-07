@@ -15,8 +15,8 @@ Goals
 
 
 Notes concerning development
-Need to add more details to individual airport objects via scraping
 List states needs to be addressed or removed, eventually.
+<!-- Need to add more details to individual airport objects via scraping -->
 <!-- adding pry and nokogiri for further coding/testing. -->
 <!-- Scrape airport list from airnav...based on state selection? maybe stub state? -->
 <!-- Just in case capture doesnt include alt tabs- git add's, chrome tab with resource air nav page up, and ... a lot of thinking too much =)  -->
@@ -27,7 +27,8 @@ List states needs to be addressed or removed, eventually.
 
 Dev Thoughts
 #clean up code, lots of loose, fluff, and vestigial remnants.
+# airport_ops_table = airport_tables[8] #may decide to use this info in later revision.
 ##Will FlyQuick lib folder or FlyQuick.rb naming cause issues? So far, no, but uncertain down the road.
 <!-- #desire to commit every 15minutes, from within editor... -->
-#Will not test all possible combination of selections. There are thousands of possible results, well beyond the scope of the app's purpose of a quick check.
-##Hopefully any bug reports/errors do not happen. The AirNav webpage does not use css selectors, so scraping with nokogiri...is cumbersome.
+<!-- #Will not test all possible combination of selections. There are thousands of possible results, well beyond the scope of the app's purpose of a quick check. -->
+<!-- ##Hopefully any bug reports/errors do not happen. The AirNav webpage does not use css selectors, so scraping with nokogiri...is cumbersome. -->
