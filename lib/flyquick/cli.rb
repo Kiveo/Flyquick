@@ -8,13 +8,22 @@ class FlyQuick::CLI
     app_end
   end
 
+  #-----------------------------------------------------------------------
   def list_states
     #get_states
     puts "Here is a list of states to search for an airport within:"
     puts "--"
-    @states = FlyQuick::State_List.list_states
+    @states = FlyQuick::State.list
+    @states.each.with_index(1) do |state, i|
+      puts "#{i} #{state} (USA)"
+    end
   end
 
+  # def state_method(selected_state)
+  #   @state_object = FlyQuick::Airport.state_selector(selected_state)
+  # end
+
+  #-----------------------------------------------------------------------
   def make_selection
     puts "\nPlease enter the list number of your desired selection. Type exit to end program."
     #ideally case block will use variable generation...50 states is inefficient to type out.
