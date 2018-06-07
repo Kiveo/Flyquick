@@ -71,11 +71,11 @@ class FlyQuick::CLI
         #Need to dive deeper than list and scrape from airport specific page for attributes, such as name, tower, etc.
   #-----------------------------------------------------------------------
         airport_method(selected_airport)
-        puts "#{@airport_object.name}"
-        puts "Ident: #{@airport_object.ident}" #faa identifier
-        puts "#{@airport_object.tower}"  #comm frequency
-        puts "#{@airport_object.wx}" #weather frequency/phone 
-        break
+        puts "  #{@airport_object.name}"
+        puts "  Ident: #{@airport_object.ident}" #faa identifier
+        puts "  #{@airport_object.tower}"  #comm frequency
+        puts "#{@airport_object.wx.gsub(/R/, "  R")}" #weather frequency/phone
+        # break
       elsif input2 == "restart"
         list_states
         return make_selection
@@ -85,7 +85,7 @@ class FlyQuick::CLI
         puts "Unrecognized input. Please input a listed number, type restart, or type exit"
       end
     end
-    puts "Airport data based on selection #{input2}..."
+    puts "\nAirport data based on selection #{input2}..."
   end
 
   def app_end

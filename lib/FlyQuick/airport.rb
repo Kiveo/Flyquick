@@ -28,16 +28,18 @@ class FlyQuick::Airport
     doc2 = Nokogiri::HTML(open("https://www.airnav.com/airport/#{user_selection}"))
     airport_tables = doc2.search('table')
     airport_name_table = airport_tables[3]
-    # airport_name = airport_table.attr("b")
     airport.ident = airport_name_table.search("b")[0].inner_html
     airport.name = airport_name_table.search("b")[1].inner_html
+
     airport_com_table = airport_tables[9]
     airport.tower = airport_com_table.at("tr[1]").text
     airport.tower = airport_com_table.at("tr[2]").text
+
+    airport.wx = doc2.search("h4").text 
     # body > table:nth-child(8) > tbody > tr > td:nth-child(1) > table:nth-child(10) > tbody > tr:nth-child(1)
     # airport_ops_table = airport_tables[8]
 
-    binding.pry
+    # binding.pry
     airport
   end
 
