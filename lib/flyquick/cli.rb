@@ -69,12 +69,13 @@ class FlyQuick::CLI
       if input2.to_i > 0 && input2 != "exit"
         selected_airport = @airports[input2.to_i-1] #user selected airport, from previously provided list.
         #Need to dive deeper than list and scrape from airport specific page for attributes, such as name, tower, etc.
-  #-----------------------------------------------------------------------
         airport_method(selected_airport)
         puts "  #{@airport_object.name}"
         puts "  Ident: #{@airport_object.ident}" #faa identifier
         puts "  #{@airport_object.tower}"  #comm frequency
-        puts "#{@airport_object.wx.gsub(/R/, "  R")}" #weather frequency/phone
+        puts "  #{@airport_object.wx}" #wx frequency
+        puts "#{@airport_object.runways.gsub(/R/, "  R")}" #weather frequency/phone
+        puts "\nPlease input an airport number, type restart, or type exit"
         # break
       elsif input2 == "restart"
         list_states
@@ -85,11 +86,10 @@ class FlyQuick::CLI
         puts "Unrecognized input. Please input a listed number, type restart, or type exit"
       end
     end
-    puts "\nAirport data based on selection #{input2}..."
   end
 
   def app_end
-    puts "\nThank you for using Flyquick. Safe travels!"
+    puts "Thank you for using Flyquick. Safe travels!"
   end
 
 end #EOC

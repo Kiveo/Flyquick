@@ -33,9 +33,9 @@ class FlyQuick::Airport
 
     airport_com_table = airport_tables[9]
     airport.tower = airport_com_table.at("tr[1]").text
-    airport.tower = airport_com_table.at("tr[2]").text
+    airport.wx = airport_com_table.at("tr[2]").text
 
-    airport.wx = doc2.search("h4").text 
+    airport.runways = doc2.search("h4").text
     # body > table:nth-child(8) > tbody > tr > td:nth-child(1) > table:nth-child(10) > tbody > tr:nth-child(1)
     # airport_ops_table = airport_tables[8]
 
