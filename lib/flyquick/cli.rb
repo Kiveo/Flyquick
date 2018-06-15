@@ -3,6 +3,7 @@ class FlyQuick::CLI
 
   def call
     puts "--------------------Welcome to FlyQuick!--------------------"
+    FlyQuick::Scraper.scrape_state_list
     list_states
     make_selection
     app_end
@@ -13,10 +14,11 @@ class FlyQuick::CLI
     #get_states
     puts "\nHere is a list of states to search for an airport within:"
     puts "------------------------------------------------------------"
-    @states = FlyQuick::State.list  #for user readability. Full state names
-    @shorts = FlyQuick::State.short_list  #for url alteration. Shorthand state names such as GA, FL, etc.
+    # @states = FlyQuick::State.list  #for user readability. Full state names
+    # @shorts = FlyQuick::State.short_list  #for url alteration. Shorthand state names such as GA, FL, etc.
+    @states = FlyQuick::State.all
     @states.each.with_index(1) do |state, i|
-      puts "#{i} #{state} (USA)"
+      puts "#{i} #{state.name} (USA)"
     end
   end
 
@@ -33,9 +35,9 @@ class FlyQuick::CLI
       input1 = gets.strip.downcase
 
       if input1.to_i > 0 && input1.to_i < 52 && input1 != "exit"
-        puts "For Reference: #{@states[input1.to_i-1]}"
-        selected_state = @shorts[input1.to_i-1]
-        state_method(selected_state)
+        selected_state = FlyQuick::State.all[input1.to_i-1]
+        puts "For Reference: #{selected_state.name}"
+        state_method(selected_state.short)
         break
       elsif input1 == "exit"
         break

@@ -1,6 +1,9 @@
 class FlyQuick::Airport
   attr_accessor :ident, :name, :tower, :wx, :runways
 
+  @@all = []
+
+# Prevent scraping the same data more than once... How can we accomplish this?
   def self.state_selector(selected_state)
     @airport_state = selected_state
   end
@@ -11,6 +14,7 @@ class FlyQuick::Airport
 
   def self.scraped_airport_list  #scrape list of state airports
     airport_collection = []
+    puts "SCRAPING airports *************"
     doc = Nokogiri::HTML(open("https://www.airnav.com/airports/us/#{@airport_state}"))  #I want this to change based on menu 1 selection of state.
     tables = doc.search('table')
     table = tables[3] # third table in the document contains all the airport links and names for the state
@@ -28,6 +32,7 @@ class FlyQuick::Airport
   def self.scrape_selected_airport(user_selection) #create and return an airport object for the current selection.
     airport = self.new
 
+    puts "SCRAPING airports ************* details"
     doc2 = Nokogiri::HTML(open("https://www.airnav.com/airport/#{user_selection}"))
     airport_tables = doc2.search('table')
     airport_name_table = airport_tables[3]
