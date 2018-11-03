@@ -22,7 +22,7 @@ PLATFORMS
 
 DEPENDENCIES
   FlyQuick!
-  bundler (~> 1.16)
+  bundler (~> 1.15.2)
   pry
   rake (~> 10.0)
 
